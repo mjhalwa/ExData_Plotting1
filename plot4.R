@@ -1,10 +1,3 @@
-#rough estimation on data (complete dataset)
-# each line:
-# - 7x "numeric" -> 7*8Bytes
-# - 1x 10"character" + 1x 8"Character -> 18*8Bytes
-# -> (7+18)*8 Bytes = 200 Bytes + 1 Byte linefeed
-# num of lines: 2,075,259
-# -> 417127059 Bytes = 40735.6 kB = 397.8034 MB
 library(dplyr)
 
 ## @brief downloading, reading and converting data
