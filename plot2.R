@@ -46,6 +46,7 @@ filter_timespan <- function(data, fromDate, toDate)
 data <- read_and_prepare_data()
 data <- filter_timespan(data, fromDate="2007-02-01", toDate="2007-02-03")
 
-png("plot1.png", width=480, height=480, units="px", bg="transparent")
-hist(data$Global_active_power, main="Global Active Power", col="red", xlab="Global Active Power (kilowatts)")
+Sys.setlocale("LC_TIME", "C") # for correct weekdays
+png("plot2.png", width=480, height=480, units="px", bg="transparent")
+with(data, plot(x=DateTime, y=Global_active_power, type="l", ylab="Global Active Power", xlab=""))
 dev.off()
