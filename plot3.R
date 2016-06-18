@@ -47,6 +47,10 @@ data <- read_and_prepare_data()
 data <- filter_timespan(data, fromDate="2007-02-01", toDate="2007-02-03")
 
 Sys.setlocale("LC_TIME", "C") # for correct weekdays
-png("plot2.png", width=480, height=480, units="px", bg="transparent")
-with(data, plot(x=DateTime, y=Global_active_power, type="l", ylab="Global Active Power", xlab=""))
+
+png("plot3.png", width=480, height=480, units="px", bg="transparent")
+with(data, plot(x=DateTime, y=Sub_metering_1, type="l", ylab="Energy sub metering", xlab=""))
+with(data, lines(x=DateTime, y=Sub_metering_2, col="red"))
+with(data, lines(x=DateTime, y=Sub_metering_3, col="blue"))
+legend("topright", lty=1, legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), col=c("black","red","blue"))
 dev.off()
